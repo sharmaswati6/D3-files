@@ -16,7 +16,7 @@
 	var tree = d3.tree()
 					.size([400,400]);
 					
-	d3.json("treedata.json", function(data){
+	d3.json("treeData.json", function(data){
 		
 		//  assigns the data to a hierarchy using parent-child relationships
 		var nodes = d3.hierarchy(data, function(d) {
@@ -58,10 +58,11 @@
 		  .style("stroke", function(d) { return d.data.level; })
 		  .style("fill", function(d) { return d.data.level; })
 		  .attr("d", d3.symbol().size(50)
-		  .type(function(d){ console.log(d.data.value); 
-							//if ((d.data.value) == 2){return d3.symbolCross; } else
-							//if ((d.data.value) == 3) {return d3.symbolDiamond; }
-							return d3.symbolCross;
+		  .type(function(d){ console.log(d.data); 
+							if ((d.data.value) == 2){return d3.symbolCross; } else
+							if ((d.data.value) == 3) {return d3.symbolDiamond; } else
+							if ((d.data.value) == 1){return d3.symbolCircle; }
+							//return d3.symbolCross;
 							}
 							) );
 		// adds the text to the node
@@ -72,6 +73,7 @@
 			return d.children ? "end" : "start"; })
 		  .text(function(d) { return d.data.name; });
 			
+		// d3 symbols -- ["circle", "cross", "diamond", "square", "triangle-down", "triangle-up"]
 	
 	})
 		
