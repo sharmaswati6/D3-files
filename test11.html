@@ -1,0 +1,36 @@
+ <html>
+    <head>
+     <script type="text/javascript" src="d3/d3.js"  >
+     </script>
+    </head>
+    <body>
+	Creating a path (arc) - Arc Path Generator <br>
+     <div id="data_example3"></div>
+     <script type="text/javascript">
+     
+
+	var canvas = d3.select("body").append("svg").attr("width", 500).attr("height", 500);
+	
+	var r = 100;
+	var p = Math.PI * 2;
+	
+	var arc = d3.arc()
+				.innerRadius(r-20)
+				.outerRadius(r)
+				.startAngle(0)
+				.endAngle(p);
+				
+	var group = canvas.append("g")
+			.attr("transform", "translate(100,100)");
+			
+	group.append("path")	//attach path to group
+				.attr("d", arc)  //main thing
+				.attr("fill", "blue");
+				
+		
+		
+	
+	  
+     </script>
+    </body>
+  </html>	

@@ -1,0 +1,29 @@
+<html>
+    <head>
+    <script type="text/javascript" src="d3/d3.js">
+    </script>
+    </head>
+    <body>
+      <div id="data_example1">
+        <svg width="375" height="100">
+          <circle id = "myCircle" cx="30" cy="50" r="30" ></circle>
+          <circle id = "myCircle" cx="100" cy="50" r="30" ></circle>
+          <circle id = "myCircle" cx="170" cy="50" r="30" ></circle>
+          <circle id = "myCircle" cx="240" cy="50" r="30" ></circle>
+          <circle id = "myCircle" cx="310" cy="50" r="30" ></circle>
+        </svg>
+      </div>
+      <script type="text/javascript">
+	  radiusData = [5,10,15,20,25]
+      circleDemo = d3.select("#data_example1").selectAll("circle");
+	  circleDemo.data(radiusData)
+				.attr("r", function(d){return d})
+				.transition()
+				.delay(function (d,i) { return 1000*(i + 1);})
+				.style("stroke","black")
+				.style("fill", "orange");
+	d3.select("body").append("p").text("checking out append, Swati is here");
+	console.log(d3);
+	</script>
+    </body>
+  </html>

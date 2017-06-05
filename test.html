@@ -1,0 +1,18 @@
+ <html>
+    <head>
+      <script type="text/javascript" src="d3/d3.js"></script>
+    </head>
+    <body>
+      <div id="example">
+        <svg width="100" height="100">
+          <circle id = "myCircle" cx="50" cy="50" r="30" ></circle>
+        </svg>
+      </div>
+      <script type="text/javascript">
+        var circleDemo = d3.select("#myCircle");
+          circleDemo.attr("r", 40);
+          circleDemo.style("stroke", "black");
+          circleDemo.style("fill", "orange");    
+      </script>
+    </body>
+  </html>

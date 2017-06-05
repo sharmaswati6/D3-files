@@ -1,0 +1,28 @@
+ <html>
+    <head>
+     <script type="text/javascript" src="d3/d3.js" >
+     </script>
+    </head>
+    <body>
+     <div id="mouseEvent_example"></div>
+     <script type="text/javascript">
+
+	 
+     var selectDiv = d3.select("#mouseEvent_example")
+      .append("svg:svg")
+	  .attr("width", 200)
+	  .attr("height", 200);
+	  
+	 selectDiv.append("svg:rect")
+		.style("stroke","gray")
+		.style("fill", "white")
+		.attr("x", 50)
+		.attr("y", 50)
+		.attr("width", 100)
+		.attr("height", 100)
+		.on("mouseover", function(){d3.select(this).style("fill", "green");})
+		.on("mouseout", function(){d3.select(this).style("fill", "white");});
+	  
+     </script>
+    </body>
+  </html>	

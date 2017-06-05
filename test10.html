@@ -1,0 +1,43 @@
+ <html>
+    <head>
+     <script type="text/javascript" src="d3/d3.js"  >
+     </script>
+    </head>
+    <body>
+	Creating a path (line) using 3 coordinates <br>
+     <div id="data_example3"></div>
+     <script type="text/javascript">
+     
+
+	var canvas = d3.select("body").append("svg").attr("width", 500).attr("height", 500);
+	
+	data = [
+			{x: 10, y: 20},
+			{x: 20, y: 40},
+			{x: 30, y: 60},
+			{x: 40, y: 80}
+			];
+	
+	var line = d3.line()
+				.x(function(d) {return d.x; })
+				.y(function(d) {return d.y});
+				
+	var group = canvas.append("g")
+			.attr("transform", "translate(50,150)");
+			
+	group.selectAll("path")	//attach path to group
+			.data([data])
+			.enter()
+				.append("path")
+				.attr("d", line)  //main thing
+				.attr("fill", "none")
+				.attr("stroke", "blue")
+				.attr("stroke-width", 10);
+		
+		
+		
+	
+	  
+     </script>
+    </body>
+  </html>	

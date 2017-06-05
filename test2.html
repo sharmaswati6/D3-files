@@ -1,0 +1,27 @@
+<html>
+    <head>
+    <script type="text/javascript" src="d3/d3.js">
+    </script>
+    </head>
+    <body>
+      <div id="data_example1">
+        <svg width="375" height="100">
+          <circle id = "myCircle" cx="30" cy="50" r="30" ></circle>
+          <circle id = "myCircle" cx="100" cy="50" r="30" ></circle>
+          <circle id = "myCircle" cx="170" cy="50" r="30" ></circle>
+          <circle id = "myCircle" cx="240" cy="50" r="30" ></circle>
+          <circle id = "myCircle" cx="310" cy="50" r="30" ></circle>
+        </svg>
+      </div>
+      <script type="text/javascript">
+	  radiusData = [[10, "rgb(246, 239, 247)"], [15, "rgb(189,201,225)"],
+	  
+      [20, "rgb(103,169,207)"], [25, "rgb(28,144,153)"], [30, "rgb(1,108,89)"]];
+      circleDemo = d3.select("#data_example1").selectAll("circle");
+	  circleDemo.data(radiusData)
+				.attr("r", function(d){return d[0]})
+				.style("stroke","black")
+				.style("fill", function(d){return d[1]});
+      </script>
+    </body>
+  </html>
